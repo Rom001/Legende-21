@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(Image/fond_body.jpg);
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+h1 {
+    color: white;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav li {
+    float: left;
+}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+    background-color: red;
+}
+
+ul.topnav li a.active {
+    background-color: red;
+}
+
+ul.topnav li.right {
+    float: right;
+}
+
+@media screen and (max-width: 600px) {
+
+    ul.topnav li.right,
+    ul.topnav li {
+        float: none;
+    }
+}
+
+.global {
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    margin-bottom: 50px;
+    background-color: #333;
+}
+
+.partiel {
+    flex: 1;
+    padding: 1em;
+    border: solid;
+}
+
+.global_news{
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    background-color: #333;
+}
+
+.news_partiel {
+    flex: 1;
+    padding: 1em;
+    border: solid;
+}
+
+.inscription {
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
+
+.connexion {
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
