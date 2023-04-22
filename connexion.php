@@ -5,9 +5,9 @@ require_once('modules/nav.php');
 ?>
 
 <body>
-    <div class="container_connexion">
-        <h1>Se connecter</h1>
+    <div id="container_connexion">
         <form method="post">
+            <h1>Se connecter</h1>
             <?php
             if (isset($er_mail)) {
             ?>
@@ -29,10 +29,10 @@ require_once('modules/nav.php');
                                                                                     echo $mdp;
                                                                                 } ?>" required>
             <button type="submit" name="connexion">Se connecter</button>
+            <div>
+                <h3><a href="inscription.php">Pas encore de compte, clique ici</a></h3>
+            </div>
         </form>
-        <div>
-            Pas encore de compte, clique <a href="inscription.php">ici</a>
-        </div>
     </div>
 </body>
 

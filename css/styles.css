@@ -2,11 +2,12 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(../Image/fond_body.jpg);
+    color: white;
 }
 
 a {
     text-decoration: none;
-    color: initial;
+    color: inherit;
 }
 
 h1 {
@@ -60,12 +61,17 @@ ul.topnav li.right {
     margin-top: 10%;
     margin-bottom: 50px;
     background-color: #333;
+    color: white;
 }
 
 .partiel {
     flex: 1;
     padding: 1em;
-    border: solid;
+    border: none;
+}
+
+.partiel:hover {
+    background-color: #4e4e4e;
 }
 
 .global_news{

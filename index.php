@@ -3,25 +3,12 @@ session_start();
 //session_unset();
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+require_once('modules/header.php');
+require_once('modules/nav.php');
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="prono">
-    <title>Legend 21</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-    <!-- navbar -->
-    <ul class="topnav">
-        <li><a class="active" href="#home">Home</a></li>
-        <li class="right"><a href="news.php">News</a></li>
-        <li class="right"><a href="#contact">Contact</a></li>
-        <li class="right"><a href="#about">About</a></li>
-    </ul>
+<div style="width:80%; margin:auto;">
     <?php
     echo $_SESSION['id_utilisateur'];
     if (!isset($_SESSION['id_utilisateur'])) { ?>
@@ -35,14 +22,15 @@ session_start();
         </div>
     <?php
     } else { ?>
-            <div class='global'>
+        <div class='global'>
             <div class='partiel'>
                 <p class='deconnexion'><a href='deconnexion.php'>SE DECONNECTER</a></p>
             </div>
-<?php
+        <?php
     }
-    ?>
+        ?>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UUOBtkiDrE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        </body>
 
-</body>
-
-</html>
+        </html>
