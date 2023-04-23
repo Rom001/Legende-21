@@ -5,52 +5,59 @@ $news = $_GET['news']; // On récupere l'id_news pour afficher la bonne news
 ?>
 
 
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+require_once('modules/header.php');
+require_once('modules/nav.php');
+?>
 
-<head>
+<?php
 
-    <meta charset="utf-8">
+// News prénédente
+$req = $DB->query("SELECT MAX(id_news) as id FROM news WHERE id_news < $news");
+$row = $req->fetch();
+$news_precedente = $row['id'];
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+// News suivante
+$req = $DB->query("SELECT MIN(id_news) as id FROM news WHERE id_news > $news");
+$row = $req->fetch();
+$news_suivante = $row['id'];
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>News</title>
-    <link rel="stylesheet" href="css/styles.css">
+$req = $DB->query("SELECT * FROM news WHERE id_news = $news");
+$row = $req->fetch();
 
-</head>
+if (!$row['titre']){
+    header('Location: news.php');
+    exit;
+}
 
-<body>
+?>
 
-    <!-- navbar -->
-    <ul class="topnav">
-        <li><a class="active" href="index.php">Home</a></li>
-        <li class="right"><a href="news.php">News</a></li>
-        <li class="right"><a href="#contact">Contact</a></li>
-        <li class="right"><a href="#about">About</a></li>
-    </ul>
+<div class="global_news">
 
-    <?php
-
-    $req = $DB->query("SELECT * FROM news WHERE id_news = $news");
-    $row = $req->fetch();
-
-    ?>
-
-    <div>
-        <h1>
-            <?php
-            echo $row['titre'];
-            ?>
-        </h1>
+    <h1>
+        <?php
+        echo $row['titre'];
+        ?>
+    </h1>
+    <div id="enLigne" style="">
+        <?php
+        if ($news_precedente) echo "<a style='margin: 10px;' href='news_complete.php?news=" . $news_precedente . "'>News précédente</a>";
+        if ($news_suivante) echo "<a style='margin: 10px;' href='news_complete.php?news=" . $news_suivante . "'>News suivante</a>";
+        ?>
     </div>
     <img class="image_news_complete" <?php $image = $row['image'];
                                         echo "src=image/news/$image";
                                         ?>>
-    <div>
+    <div style="marging: 10px; padding:10px; border: solid; border-color:white;">
+        Résumé :
+        <?php
+        echo $row['resume'];
+        ?>
+    </div>
+    <div style="marging: 10px; padding:10px">
         <?php
         echo $row['texte'];
         ?>
     </div>
-
+</div>
 </body>
