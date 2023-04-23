@@ -26,11 +26,11 @@ require_once('modules/nav.php');
             <div class='partiel'>
                 <p class='deconnexion'><a href='deconnexion.php'>SE DECONNECTER</a></p>
             </div>
-        <?php
-    }
-        ?>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/UUOBtkiDrE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        </body>
+    <?php
+    }
+    ?>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/UUOBtkiDrE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
         </html>
