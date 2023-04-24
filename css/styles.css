@@ -110,3 +110,9 @@ ul.topnav li.right {
     font-size: x-large;
 
 }
+
+hr{
+    height: 50px;
+    background-color: white;
+    border-color: white;
+}

@@ -1,34 +1,10 @@
 <?php
-session_start();
-include('bd/connexionbd.php'); // Connexion à la BDD
-
+require_once('fonctions/connexion.php');
+require_once('modules/header.php');
+require_once('modules/nav.php');
 ?>
 
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-    <meta charset="utf-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>News</title>
-    <link rel="stylesheet" href="css/styles.css">
-
-</head>
-
 <body>
-
-    <!-- navbar -->
-    <ul class="topnav">
-        <li><a class="active" href="index.php">Home</a></li>
-        <li class="right"><a href="news.php">News</a></li>
-        <li class="right"><a href="#contact">Contact</a></li>
-        <li class="right"><a href="#about">About</a></li>
-    </ul>
 
     <?php
     $req = $DB->query("SELECT * FROM news ORDER BY id_news DESC LIMIT 0, 10"); // On selectionne toutes les news de notre base de donnée
@@ -70,5 +46,4 @@ include('bd/connexionbd.php'); // Connexion à la BDD
         $row = $req->fetch();
     }
     ?>
-
 </body>

@@ -39,7 +39,7 @@ if (!$row['titre']){
         echo $row['titre'];
         ?>
     </h1>
-    <div id="enLigne" style="">
+    <div id="enLigne">
         <?php
         if ($news_precedente) echo "<a style='margin: 10px;' href='news_complete.php?news=" . $news_precedente . "'>News précédente</a>";
         if ($news_suivante) echo "<a style='margin: 10px;' href='news_complete.php?news=" . $news_suivante . "'>News suivante</a>";
@@ -48,13 +48,13 @@ if (!$row['titre']){
     <img class="image_news_complete" <?php $image = $row['image'];
                                         echo "src=image/news/$image";
                                         ?>>
-    <div style="marging: 10px; padding:10px; border: solid; border-color:white;">
+    <div style="margin: 10px; padding:10px; border: solid; border-color:white;">
         Résumé :
         <?php
         echo $row['resume'];
         ?>
     </div>
-    <div style="marging: 10px; padding:10px">
+    <div style="margin: 10px; padding:10px">
         <?php
         echo $row['texte'];
         ?>
