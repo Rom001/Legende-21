@@ -9,3 +9,4 @@ $competition = $_GET['competition']; // On récupere l'id_news pour afficher la 
 require_once('modules/header.php');
 require_once('modules/nav.php');
 ?>
+

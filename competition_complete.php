@@ -11,7 +11,7 @@ require_once('modules/nav.php');
 ?>
 
 <?php
-$req = $DB->query("SELECT * FROM competition WHERE id_competition = $competition");
+$req = $DB->query("SELECT * FROM competition WHERE id_competition = '$competition'");
 $row = $req->fetch();
 ?>
 
@@ -36,7 +36,7 @@ $row = $req->fetch();
     <hr>
     <div class="global">
         <div class="partiel">
-            <img src="image/<?php echo $row['image'];?>">
+            <img src="image/<?php echo $row['image1'];?>">
         </div>
         <div class="partiel">
             <p>
@@ -63,4 +63,39 @@ $row = $req->fetch();
     </div>
     <hr>
     <a href="liste_equipe.php?competition=<?php echo $competition;?>">Liste des équipe participante</a>
+    <?php
+    $nom = 'E-LCK-BRION';
+    $req = $DB->query("SELECT * FROM equipe where id_equipe = '$nom'"); // On selectionne toutes les news de notre base de donnée
+    $row = $req->fetch();
+    $nb_news = $req->rowCount();
+    /*
+    $nb_news = $row['id_news'];
+    if ($nb_news >= 10) { // On limite l'affichage a 10 news
+        $nb_news = 10;
+    }
+    */
+
+    for ($i = 0; $i < $nb_news; $i++) { 
+    ?>  <!-- On envoie l'id_news de la div cliquer vers news_complete.php -->
+            <div class="global">
+                <div class="partiel">
+                    <h1>
+                        <?php
+                        echo $row['nom'];
+                        ?>
+                    </h1>
+                    <p>
+                        <?php
+                        echo $row['nom'];
+                        ?>
+                    </p>
+                </div>
+                <div class="partiel">
+                <img src="image/Logo equipe/Logo_<?php echo $row['nom'];?>.png">
+                </div>
+            </div>
+    <?php
+        $row = $req->fetch();
+    }
+    ?>
 </dody>
