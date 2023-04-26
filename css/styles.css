@@ -75,9 +75,9 @@ ul.topnav li.right {
     background-color: #4e4e4e;
 }
 
-.global_news{
+.global_news {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -111,8 +111,56 @@ ul.topnav li.right {
 
 }
 
-hr{
+hr {
     height: 50px;
     background-color: white;
     border-color: white;
+}
+
+.joueur {
+    height: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    gap: 2rem;
+}
+
+.item {
+    background-image: url(../image/Logo\ equipe/Logo_Aegis);
+    background-size: cover;
+    background-position: center top;
+    background-size: auto 100%;
+    border-radius: 5rem;
+    flex-grow: 1;
+    transition: width 300ms ease;
+    width: 33%;
+    cursor: pointer;
+    position: relative;
+}
+
+.item:hover {
+    width: 66%;
+}
+
+.vert{
+    transition: width 300ms ease;
+    width: 33%;
+    position: absolute;
+    bottom: 2rem;
+    left: .5rem;
+    color: white;
+    transform: rotate(-90deg);
+    font-size: 2rem;
+}
+
+.horiz{
+
+    transition: width 300ms ease;
+    width: 33%;
+    position: absolute;
+    bottom: 2rem;
+    left: .5rem;
+    color: white;
+    font-size: 2rem;
+
 }

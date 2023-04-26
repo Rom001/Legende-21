@@ -36,7 +36,7 @@ $row = $req->fetch();
     <hr>
     <div class="global">
         <div class="partiel">
-            <img src="image/<?php echo $row['image1'];?>">
+            <img src="image/<?php echo $row['image1']; ?>">
         </div>
         <div class="partiel">
             <p>
@@ -47,25 +47,26 @@ $row = $req->fetch();
         </div>
     </div>
     <hr>
-    <img src="image/<?php echo $row['image2'];?>">
+    <img src="image/<?php echo $row['image2']; ?>">
     <hr>
     <div class="global">
         <div class="partiel">
             <h1>
+                Dernier vainqueur :
                 <?php
                 echo $row['last_win'];
                 ?>
             </h1>
         </div>
         <div class="partiel">
-            <img src="image/Logo equipe/Logo_<?php echo $row['last_win'];?>.png">
+            <img src="image/Logo equipe/Logo_<?php echo $row['last_win']; ?>.png">
         </div>
     </div>
     <hr>
-    <a href="liste_equipe.php?competition=<?php echo $competition;?>">Liste des équipe participante</a>
+    <a href="liste_equipe.php?competition=<?php echo $competition; ?>">Liste des équipe participante</a>
     <?php
-    $nom = 'E-LCK-BRION';
-    $req = $DB->query("SELECT * FROM equipe where id_equipe = '$nom'"); // On selectionne toutes les news de notre base de donnée
+    $req = $DB->query("SELECT * FROM equipe where id_equipe LIKE '%$competition%'"); // On selectionne toutes les news de notre base de donnée
+    echo $competition;
     $row = $req->fetch();
     $nb_news = $req->rowCount();
     /*
@@ -75,8 +76,9 @@ $row = $req->fetch();
     }
     */
 
-    for ($i = 0; $i < $nb_news; $i++) { 
-    ?>  <!-- On envoie l'id_news de la div cliquer vers news_complete.php -->
+    for ($i = 0; $i < $nb_news; $i++) {
+    ?> <!-- On envoie l'id_news de la div cliquer vers news_complete.php -->
+        <a href="equipe.php?equipe=<?php echo $row['id_equipe']; ?>">
             <div class="global">
                 <div class="partiel">
                     <h1>
@@ -91,10 +93,12 @@ $row = $req->fetch();
                     </p>
                 </div>
                 <div class="partiel">
-                <img src="image/Logo equipe/Logo_<?php echo $row['nom'];?>.png">
+                    <img src="image/Logo equipe/Logo_<?php echo $row['nom']; ?>.png">
                 </div>
             </div>
+        </a>
     <?php
+        echo $row['nom'];
         $row = $req->fetch();
     }
     ?>

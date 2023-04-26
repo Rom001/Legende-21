@@ -19,7 +19,7 @@ require_once('modules/nav.php');
 
     for ($i = 0; $i < $nb_competition; $i++) { 
     ?>
-        <a href="competition_complete.php?competition='<?php echo $row['id_competition'];?>'"> <!-- On envoie l'id_news de la div cliquer vers news_complete.php -->
+        <a href="competition_complete.php?competition=<?php echo $row['id_competition'];?>"> <!-- On envoie l'id_news de la div cliquer vers news_complete.php -->
             <div class="global">
                 <div class="partiel">
                     <h1>
