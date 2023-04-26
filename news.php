@@ -37,7 +37,7 @@ require_once('modules/nav.php');
                 </div>
                 <div class="partiel">
                     <?php $image = $row['image'];
-                    echo "<img src=image/news/$image>";
+                    echo "<img src=image/news/$image style='width: 100%;'>";
                     ?>
                 </div>
             </div>

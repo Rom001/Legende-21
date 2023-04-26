@@ -113,8 +113,10 @@ ul.topnav li.right {
 
 hr {
     height: 50px;
-    background-color: white;
-    border-color: white;
+    background-color: #333;
+    border-color: #333;
+    margin-top: -4px;
+    margin-bottom: 0;
 }
 
 .joueur {
@@ -162,4 +164,9 @@ hr {
     color: white;
     font-size: 2rem;
 
+}
+
+.ligue{
+    margin-top: 10%;
+    margin-bottom: 10%;
 }

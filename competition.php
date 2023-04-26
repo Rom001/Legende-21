@@ -35,7 +35,7 @@ require_once('modules/nav.php');
                 </div>
                 <div class="partiel">
                     <?php $image = $row['image1'];
-                    echo "<img src=image/news/$image>";
+                    echo "<img src=image/competition/$image.png>";
                     ?>
                 </div>
             </div>

@@ -33,13 +33,12 @@ $row = $req->fetch();
             </p>
         </div>
     </div>
-    <hr>
     <div class="global">
         <div class="partiel">
-            <img src="image/<?php echo $row['image1']; ?>">
+            <img src="image/competition/<?php echo $row['image1']; ?>.png">
         </div>
         <div class="partiel">
-            <p>
+            <p class="ligue">
                 <?php
                 echo $row['texte'];
                 ?>
@@ -47,7 +46,7 @@ $row = $req->fetch();
         </div>
     </div>
     <hr>
-    <img src="image/<?php echo $row['image2']; ?>">
+    <img src="image/competition/<?php echo $row['image2']; ?>.png" style="width:100%;">
     <hr>
     <div class="global">
         <div class="partiel">
