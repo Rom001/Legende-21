@@ -36,30 +36,23 @@ $row = $req->fetch();
         </div>
     </div>
 
-<div class="joueur">
-    <div class="item">
-        <div class="vert">SUPP</div>
-        Rom/1
-    </div>
-    <div class="item">
-        <div class="vert">SUPP</div>
-        Rom/1
-    </div>
-    <div class="item">
-        <div class="vert">SUPP</div>
-        Rom/1
-    </div>
-    <div class="item">
-        <div class="vert">SUPP</div>
-        Rom/1
-    </div>
-    <div class="item">
-        <div class="vert">SUPP</div>
-        Rom/1
-    </div>
-</div>
+    <div class="joueur">
+        <?php
+        for ($i = 0; $i < 5; $i++) {
+        ?>
+            <div class="item" style="background-image: url(image/joueur/<?php echo $row['pseudo'];?>.png);">
+            
+                <div class="vert"><?php echo $row['position']; ?></div>
+                <?php echo $row['pseudo']; ?>
+            </div>
+        <?php
+        $row = $req->fetch();
+        }
+        ?>
 
-<div class="global">
+    </div>
+
+    <div class="global">
         <div class="partiel">
             <h1>
                 <?php
