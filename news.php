@@ -10,18 +10,13 @@ require_once('modules/nav.php');
     $req = $DB->query("SELECT * FROM news ORDER BY id_news DESC LIMIT 0, 10"); // On selectionne toutes les news de notre base de donnée
     $row = $req->fetch();
     $nb_news = $req->rowCount();
-    /*
-    $nb_news = $row['id_news'];
-    if ($nb_news >= 10) { // On limite l'affichage a 10 news
-        $nb_news = 10;
-    }
-    */
 
-    for ($i = 0; $i < $nb_news; $i++) { 
+    for ($i = 0; $i < $nb_news; $i++) {
     ?>
-        <a 
-        <?php if(!isset($_SESSION['id_utilisateur'])){echo "href='connexion.php'";}
-        echo "href='news_complete.php?news=" . $row['id_news'] . "'";?>> <!-- On envoie l'id_news de la div cliquer vers news_complete.php -->
+        <a <?php if (!isset($_SESSION['id_utilisateur'])) {
+                echo "href='connexion.php'";
+            }
+            echo "href='news_complete.php?news=" . $row['id_news'] . "'"; ?>> <!-- On envoie l'id_news de la div cliquer vers news_complete.php -->
             <div class="global">
                 <div class="partiel">
                     <h1>

@@ -25,7 +25,7 @@ $news_suivante = $row['id'];
 $req = $DB->query("SELECT * FROM news WHERE id_news = $news");
 $row = $req->fetch();
 
-if (!$row['titre']){
+if (!$row['titre']) {
     header('Location: news.php');
     exit;
 }

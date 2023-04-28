@@ -1,5 +1,4 @@
 <?php
-    //Déclaration d'une nouvelle classe
     class connexionbd{
         private $host = 'localhost';
         private $name = 'legende 21';
@@ -34,10 +33,5 @@
             $req = $this->connexion->prepare($sql);
             $req->execute($data);
         }
-
-
     }
-
     $DB = new connexionbd;
-
-?>

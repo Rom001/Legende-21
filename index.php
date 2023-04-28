@@ -1,6 +1,5 @@
 <?php
 session_start();
-//session_unset();
 ?>
 
 <?php
@@ -10,7 +9,6 @@ require_once('modules/nav.php');
 
 <div style="width:80%; margin:auto;">
     <?php
-    echo $_SESSION['id_utilisateur'];
     if (!isset($_SESSION['id_utilisateur'])) { ?>
         <div class='global'>
             <div class='partiel'>
@@ -32,5 +30,6 @@ require_once('modules/nav.php');
     ?>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/UUOBtkiDrE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
+</body>
 
-        </html>
+</html>
