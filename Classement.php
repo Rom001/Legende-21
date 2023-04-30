@@ -5,12 +5,10 @@ $competition = $_GET['classement'];
 $utilisateur = $_SESSION['id_utilisateur'];
 ?>
 
-
 <?php
 require_once('modules/header.php');
 require_once('modules/nav.php');
 ?>
-
 
 <?php
 $req = $DB->query("SELECT * FROM equipe WHERE id_equipe LIKE '%$competition%' ORDER BY nb_victoire DESC");
@@ -29,9 +27,6 @@ $nb_equipe = $req->rowCount();
     </tr>
 
     <?php
-
-
-
     for ($i = 0; $i < $nb_equipe; $i++) {  //parcours de toutes les équipes de la ligue en question puis affichage classement
 
         $req_prono = $DB->query("SELECT p.prono FROM prono p INNER JOIN utilisateur u on p.code_utilisateur = u.id_utilisateur INNER JOIN equipe e on e.id_equipe = p.code_equipe WHERE id_utilisateur = '$utilisateur' AND id_equipe = '$row[id_equipe]' ORDER BY e.nb_victoire DESC"); // On selectionne truc avec la table d'association
@@ -53,5 +48,5 @@ $nb_equipe = $req->rowCount();
         $row_prono = $req_prono->fetch();
     }
     ?>
-
-    </body>
+</table>
+</body>

@@ -4,8 +4,6 @@ require_once('modules/header.php');
 require_once('modules/nav.php');
 ?>
 
-<body>
-
     <?php
     $req = $DB->query("SELECT * FROM competition LIMIT 0, 10"); // On selectionne toutes les competititons
     $row = $req->fetch();
@@ -14,7 +12,7 @@ require_once('modules/nav.php');
     for ($i = 0; $i < $nb_competition; $i++) {
     ?>
         <a href="competition_complete.php?competition=<?php echo $row['id_competition']; ?>"> <!-- On envoie l'id_competition de la div cliquer vers competition_complete.php -->
-            <div class="global">
+            <div class="global_over">
                 <div class="partiel">
                     <h1>
                         <?php
@@ -27,7 +25,7 @@ require_once('modules/nav.php');
                         ?>
                     </p>
                 </div>
-                <div class="partiel">
+                <div class="partiel_image">
                     <?php $image = $row['image1'];
                     echo "<img src=image/competition/$image.png>";
                     ?>

@@ -12,7 +12,6 @@ require_once('modules/header.php');
 require_once('modules/nav.php');
 ?>
 
-
 <?php
 $req_competition = $DB->query("SELECT * FROM competition");
 $row_competiton = $req_competition->fetch();
@@ -20,7 +19,7 @@ $nb_competion = $req_competition->rowCount();
 
 for ($i = 0; $i < $nb_competion; $i++) {
 ?>
-    <div class="global">
+    <div class="global_large">
         <div class="partiel">
             <h1>
                 <?php
@@ -33,7 +32,7 @@ for ($i = 0; $i < $nb_competion; $i++) {
                 ?>
             </p>
         </div>
-        <div class="partiel">
+        <div class="partiel_image">
             <?php $image = $row_competiton['image1'];
             echo "<img src=image/competition/$image.png>";
             ?>
@@ -46,7 +45,7 @@ for ($i = 0; $i < $nb_competion; $i++) {
     for ($j = 0; $j < $nb_equipe; $j++) {
     ?>
         <a href="mon_prono.php?equipe=<?php echo $row_equipe['id_equipe']; ?>">
-            <div class="global">
+            <div class="global_over">
                 <div class="partiel">
                     <h1>
                         <?php
@@ -54,8 +53,8 @@ for ($i = 0; $i < $nb_competion; $i++) {
                         ?>
                     </h1>
                 </div>
-                <div class="partiel">
-                    <img src="image/Logo equipe/Logo_<?php echo $row_equipe['nom']; ?>.png">
+                <div class="partiel_image">
+                    <img style="height:100px" src="image/Logo equipe/Logo_<?php echo $row_equipe['nom']; ?>.png">
                 </div>
             </div>
         </a>

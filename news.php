@@ -4,7 +4,6 @@ require_once('modules/header.php');
 require_once('modules/nav.php');
 ?>
 
-<body>
 
     <?php
     $req = $DB->query("SELECT * FROM news ORDER BY id_news DESC LIMIT 0, 10"); // On selectionne toutes les news de notre base de donnée
@@ -17,7 +16,7 @@ require_once('modules/nav.php');
                 echo "href='connexion.php'";
             }
             echo "href='news_complete.php?news=" . $row['id_news'] . "'"; ?>> <!-- On envoie l'id_news de la div cliquer vers news_complete.php -->
-            <div class="global">
+            <div class="global_over">
                 <div class="partiel">
                     <h1>
                         <?php

@@ -4,7 +4,6 @@ require_once('modules/header.php');
 require_once('modules/nav.php');
 ?>
 
-<body>
     <div id="container_connexion">
         <form method="post">
             <h1>Se connecter</h1>

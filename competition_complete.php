@@ -29,15 +29,15 @@ $row = $req->fetch();
             echo $row['lieux'] . $row['saison'];
             ?>
         </div>
-        <div class="partiel">
+        <div class="partiel_over">
             <a <?php if (!isset($_SESSION['id_utilisateur'])) {
                     echo "href='connexion.php'";
                 }
-                echo "href='classement.php?classement=$competition'"; ?>>Classement</a>
+                echo "href='classement.php?classement=$competition'"; ?>>>>> Classement <<<</a>
         </div>
     </div>
     <div class="global">
-        <div class="partiel">
+        <div class="partiel_image">
             <img src="image/competition/<?php echo $row['image1']; ?>.png">
         </div>
         <div class="partiel">
@@ -48,9 +48,6 @@ $row = $req->fetch();
             </p>
         </div>
     </div>
-    <hr>
-    <img src="image/competition/<?php echo $row['image2']; ?>.png" style="width:100%;">
-    <hr>
     <div class="global">
         <div class="partiel">
             <h1>
@@ -60,11 +57,13 @@ $row = $req->fetch();
                 ?>
             </h1>
         </div>
-        <div class="partiel">
+        <div class="partiel_image">
             <img src="image/Logo equipe/Logo_<?php echo $row['last_win']; ?>.png">
         </div>
     </div>
-    <hr>
+    <div class="global_large">
+    <img src="image/competition/<?php echo $row['image2']; ?>.png" style="width:100%;">
+    </div>
 </dody>
 
 </html>

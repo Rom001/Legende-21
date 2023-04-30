@@ -29,11 +29,10 @@ if (!$row['titre']) {
     header('Location: news.php');
     exit;
 }
-
 ?>
 
 <div class="global_news">
-
+<button id="back" onclick="ouvrirPage('news.php')">Retour à la liste des news</button>
     <h1>
         <?php
         echo $row['titre'];

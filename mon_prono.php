@@ -14,6 +14,7 @@ $row_equipe = $req->fetch();
 <div id="container_connexion">
     <form method="post">
         <h1>Faites votre pronostique !</h1>
+        <h2><?php echo $row_equipe['nom'];?></h2>
         <img src="image/Logo equipe/Logo_<?php echo $row_equipe['nom']; ?>.png">
         <h1>A Quelle place vont il finir ? : </h1>
         <input type="int" id="prono" name="prono" required><br>
